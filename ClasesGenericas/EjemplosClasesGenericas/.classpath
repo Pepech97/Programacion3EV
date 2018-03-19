@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ClaseGenerica/src"/>
+	<classpathentry kind="src" path="ClaseNoGenerica/src"/>
+	<classpathentry kind="src" path="ClasePromedioBien/src"/>
+	<classpathentry kind="src" path="ClasePromedioMal/src"/>
+	<classpathentry kind="src" path="Generica2Param/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="ClaseGenerica/bin"/>
+</classpath>
