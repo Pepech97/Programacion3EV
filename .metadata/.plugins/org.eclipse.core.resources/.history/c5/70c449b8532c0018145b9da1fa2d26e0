@@ -1,0 +1,30 @@
+
+public class ColaDinamica implements Dinamizable{
+
+	private Integer cola[];
+	private Integer cima;
+
+	ColaDinamica(Integer tamanioMax) {
+		cola = new Integer[tamanioMax];
+		cima = 0;
+	}
+	public void add(Integer elemento){ // apilar un elemento
+		if(cima==cola.length){  
+			System.out.println("La pila esta llena.");
+		}else{
+			cola[cima] = elemento;
+			cima++;
+		}
+	}
+
+	public Integer delete(){ // desapilar un elemento
+		if(cima == 0) {
+			System.out.println("Pila vacía.");
+			return 0;
+		}
+		else {
+			cima--;
+			return cola[cima];
+		}
+	}
+}
