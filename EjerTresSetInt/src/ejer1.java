@@ -31,6 +31,9 @@ public class ejer1 {
 		for (Integer i: conjuntoTree) {
 			System.out.printf(i+" ");
 		}
+		System.out.println("\nValores de objHashSet: "+conjuntoHashSet);
+		System.out.println("Valores de objLinkHashSet: "+conjuntoLinked);
+		System.out.println("Valores de objTreeSet: "+conjuntoTree);
 	}
 
 }

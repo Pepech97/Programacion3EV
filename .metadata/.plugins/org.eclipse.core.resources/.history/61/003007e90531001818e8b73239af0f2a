@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class ejer7 {
+	public static void main(String[] args) {
+		TreeMap<String,ArrayList> notasalumno=new TreeMap<String,ArrayList>();
+		String alumnos;
+		ArrayList<Integer>Arraynotas=new ArrayList<Integer>();
+		int n;
+		do {
+			alumnos=Leer.pedirCadena("Apellido: ");
+			for (int i = 0; i < 6; i++) {
+				n=(int)(Math.random() * (11 - 1) + 1);
+				Arraynotas.add(n);
+			}
+			notasalumno.put(alumnos, Arraynotas);
+		} while (!alumnos.equals("*"));
+		System.out.println(notasalumno);
+	}
+}
