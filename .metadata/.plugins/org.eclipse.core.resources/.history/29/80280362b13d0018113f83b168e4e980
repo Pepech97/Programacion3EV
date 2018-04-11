@@ -1,0 +1,14 @@
+
+public class Partido {
+	private String nombre;
+	private Integer votos;
+	private Integer escaños;
+	private static Integer contnombre=1;
+	public Partido() {
+		this.nombre = "partido"+contnombre;
+		this.votos = 0;
+		this.escaños = 0;
+		contnombre++;
+	}
+	
+}

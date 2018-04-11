@@ -1,0 +1,4 @@
+1523469964647	Extract method 'crearPartidos'
+1523470766151	Extract method 'eliminarPartidos'
+1523471888164	Extract method 'calcularVotos'
+1523473033504	Extract method 'asigEscaños'

@@ -1,0 +1,14 @@
+import java.util.*;
+public class Elecciones {
+
+	public static void main(String[] args) {
+		int partidos=Leer.pedirEntero("¿Cuantos partidos hay?");
+		TreeMap<String,Partido> Partidos = new TreeMap<>();
+		for (int i = 0; i <= partidos; i++) {
+			Partido unPartido = new Partido();
+			Partidos.put(unPartido.getNombre(), unPartido);
+		}
+		System.out.println(Partidos);
+	}
+
+}
