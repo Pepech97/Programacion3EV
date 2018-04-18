@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Notas {
+	public static void main(String[] args) {
+		ArrayList<Alumno> alumnos=new ArrayList<>(50);
+		String[] nombre={"nombre 1","nombre 2","nombre 3","nombre 4","nombre 5","nombre 6","nombre 7","nombre 8","nombre 9"};
+		String[] apellido={"apellido 1","apellido 2","apellido 3","apellido 4","apellido 5","apellido 6","apellido 7","apellido 8","apellido 9"};
+		for (int i = 0; i < 50; i++) {
+			int aleatorio=(int)(Math.random() * (9 - 0) + 0);
+			Alumno alumno = new Alumno(nombre[aleatorio], apellido[aleatorio],(int)(Math.random() * (101 - 0) + 0),
+					(int)(Math.random() * (101 - 0) + 0),(int)(Math.random() * (101 - 0) + 0));
+			alumnos.add(alumno);
+		}
+		System.out.println(alumnos);
+		TreeMap<Integer,ArrayList> Notas = new TreeMap<>();
+	}
+}

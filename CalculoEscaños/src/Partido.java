@@ -5,7 +5,7 @@ public class Partido {
 	private Integer escaños;
 	private static Integer contnombre=1;
 	public Partido() {
-		this.nombre = "Partido"+contnombre;
+		this.nombre = "Partido "+contnombre;
 		this.votos = 0;
 		this.escaños = 0;
 		contnombre++;

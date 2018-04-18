@@ -11,7 +11,6 @@ public class Elecciones {
 			}
 		});
 		crearPartidos(partidos, Partidos);
-		asigVotos(Partidos);
 		eliminarPartidos(Partidos);
 		calcularVotos(escaños, Partidos, mapPartidos);
 		asigEscaños(escaños, Partidos, mapPartidos);
@@ -21,15 +20,9 @@ public class Elecciones {
 		System.out.println("-----------PARTIDOS-----------");
 		for (int i = 0; i < partidos; i++) {
 			Partido unPartido = new Partido();
+			unPartido.setVotos((int)(Math.random() * (50001 - 10000) + 10000));
 			Partidos.put(unPartido.getNombre(), unPartido);
-			System.out.println(unPartido.toString());
-		}
-	}
-	public static void asigVotos(TreeMap<String, Partido> Partidos){
-		System.out.println("-----------VOTOS ASIGNADOS-----------");
-		for (String i : Partidos.keySet()) {
-			Partidos.get(i).setVotos((int)(Math.random() * (100001 - 5000) + 5000));
-			System.out.println(Partidos.get(i).toString());
+			System.out.println(Partidos.get(unPartido.getNombre().toString()));
 		}
 	}
 	private static void eliminarPartidos(TreeMap<String, Partido> Partidos) {
@@ -83,6 +76,7 @@ public class Elecciones {
 			}
 			
 		}
+		System.out.println("-----------PARTIDOS CON ESCAÑOS REPARTIDOS-----------");
 		for (String i : Partidos.keySet()) {
 			System.out.println(Partidos.get(i).toString());
 		}

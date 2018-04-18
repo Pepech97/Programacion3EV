@@ -1,0 +1,35 @@
+
+public class Partido {
+	private String nombre;
+	private Integer votos;
+	private Integer escaños;
+	private static Integer contnombre=1;
+	public Partido() {
+		this.nombre = "Partido"+contnombre;
+		this.votos = 0;
+		this.escaños = 0;
+		contnombre++;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Integer getVotos() {
+		return votos;
+	}
+	public void setVotos(Integer votos) {
+		this.votos = votos;
+	}
+	public Integer getEscaños() {
+		return escaños;
+	}
+	public void añadirEscaño() {
+		this.escaños++;
+	}
+	@Override
+	public String toString() {
+		return "Partido [nombre=" + nombre + ", votos=" + votos + ", escaños=" + escaños + "]";
+	}
+}
