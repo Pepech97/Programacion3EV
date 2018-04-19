@@ -3,3 +3,5 @@
 1523977423097	Extract method 'modificarContraseña'
 1523977806469	Extract method 'eliminarUsuario'
 1523977935184	Extract method 'menu'
+1524160880078	Extract method 'menu'
+1524161328347	Extract method 'loginUsuario'

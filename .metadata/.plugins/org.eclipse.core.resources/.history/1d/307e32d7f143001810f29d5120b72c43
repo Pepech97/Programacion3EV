@@ -3,71 +3,34 @@ import java.util.*;
 public class GestionUsuarios {
 
 	public static void main(String[] args) {
-		TreeMap<String, String> usuarios = new TreeMap<>();	
+		TreeMap<String, String> usuarios = new TreeMap<>();
 		menu(usuarios);
 	}
 
-	public static void loginUsuario(TreeMap<String, String> usuarios) {
-		String usuario=Leer.pedirCadena("Introduce el usuario: ");
-		
-		if (!usuarios.containsKey(usuario)) {
-			String nuevacuenta=Leer.pedirCadena("El usuario no existe, ¿quieres crearte una cuenta?");
-			if (nuevacuenta.equals("si")) {
-				crearUsuarios(usuarios);
-			}
-		}else {
-			String contraseña=Leer.pedirCadena("Introduce tu contraseña: ");
-			String contracifrada="";
-			for (int i = 0; i < contraseña.length(); i++) {
-				char charcontra = contraseña.charAt(i);
-				int charcifrado = (int) charcontra;
-				charcontra = (char) (charcifrado + 3);
-				contracifrada = contracifrada + charcontra;
-			}
-			contraseña=contracifrada;
-			if (usuarios.get(usuario).equals(contraseña)) {
-				System.out.println("Has iniciado sesion con el usuario "+usuario);
-				menuUsuarios(usuarios,usuario);
-			}else{
-				System.out.println("Contraseña incorrecta");
-			}
-		}
-		
-	}
-
-	public static void menu(TreeMap<String, String> usuarios) {
+	private static void menu(TreeMap<String, String> usuarios) {
 		int opcion;
 		do {
-			opcion=Leer.pedirEntero("1.-Crear Usuario\n2.-Introducir Usuario\n3.-Salir");
-		switch (opcion) {
-		case 1:
-			crearUsuarios(usuarios);
-			break;
-		case 2:
-			loginUsuario(usuarios);
-			break;
-		}
-		}while (opcion!=3);
-	}
-	
-	
-	public static void menuUsuarios(TreeMap<String, String> usuarios, String usuario) {
-		int opcion;
-		do {
-			opcion=Leer.pedirEntero("1.-Modificar contraseña\n2.-Eliminar Usuario\n3.-Salir");
+			opcion=Leer.pedirEntero("1.-Crear Usuario\n2.-Modificar contraseña\n3.-Eliminar Usuario\n4.-Salir");
 			switch (opcion) {
 			case 1:
-				modificarContraseña(usuarios,usuario);
+				crearUsuarios(usuarios);
 				break;
 			case 2:
-				eliminarUsuario(usuarios,usuario);
+				modificarContraseña(usuarios);
+				break;
+			case 3:
+				eliminarUsuario(usuarios);
 				break;
 			}
-		} while (opcion!=3);
+		} while (opcion!=4);
 
 	}
 
-	public static void eliminarUsuario(TreeMap<String, String> usuarios, String usuario) {
+	private static void eliminarUsuario(TreeMap<String, String> usuarios) {
+		String usuario=Leer.pedirCadena("Introduce el usuario: ");
+		if (!usuarios.containsKey(usuario)) {
+			System.out.println("El usuario no existe");
+		}else {
 			String contraseña=Leer.pedirCadena("Introduce tu contraseña");
 			String contracifrada="";
 			for (int i = 0; i < contraseña.length(); i++) {
@@ -89,9 +52,14 @@ public class GestionUsuarios {
 				}
 
 			} while (comprobarcont==false);
+		}
 	}
 
-	public static void modificarContraseña(TreeMap<String, String> usuarios,String usuario) {
+	private static void modificarContraseña(TreeMap<String, String> usuarios) {
+		String usuario=Leer.pedirCadena("Introduce el usuario:");
+		if (!usuarios.containsKey(usuario)) {
+			System.out.println("El usuario no existe");
+		}else {
 			String contraseña=Leer.pedirCadena("Introduce tu contraseña");
 			String contracifrada="";
 			for (int i = 0; i < contraseña.length(); i++) {
@@ -127,9 +95,10 @@ public class GestionUsuarios {
 			}else {
 				System.out.println("Contraseña incorrecta");
 			}
+		}
 	}
 
-	public static void crearUsuarios(TreeMap<String, String> usuarios) {
+	private static void crearUsuarios(TreeMap<String, String> usuarios) {
 		boolean usuCorrecto = true;
 		String usuario = Leer.pedirCadena("Introduce el usuario:");
 		String contraseña = Leer.pedirCadena("Introduce la contraseña:");
@@ -156,7 +125,6 @@ public class GestionUsuarios {
 			System.out.println("El usuario ya existe");
 		} else {
 			usuarios.put(usuario, contraseña);
-			menuUsuarios(usuarios, usuario);
 		}
 	}
 

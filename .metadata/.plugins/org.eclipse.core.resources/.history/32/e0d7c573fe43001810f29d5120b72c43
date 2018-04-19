@@ -156,7 +156,6 @@ public class GestionUsuarios {
 			System.out.println("El usuario ya existe");
 		} else {
 			usuarios.put(usuario, contraseña);
-			menuUsuarios(usuarios, usuario);
 		}
 	}
 
