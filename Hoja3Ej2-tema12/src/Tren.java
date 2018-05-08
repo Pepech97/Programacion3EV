@@ -1,25 +1,29 @@
 
-public class Tren {
+public class Tren implements Comparable<Tren>{
 	private Fecha fechaSalida;
 	private String salida;
 	private String destino;
-	private Integer idtren=101;
-	private Integer vagones;
+	private Integer idtren=100;
+	private Vagon vagones[]=new Vagon[2];
 	
 	public Tren(Fecha fechaSalida, String salida, 
 			String destino) {
 		this.fechaSalida = fechaSalida;
 		this.destino = destino;
 		this.salida = salida;
-		this.idtren = idtren+1;
+		this.idtren++;
 	}
-	
-	public void comprarBillete(){
-		if (vagones<10) {
-			vagones++;
-		}else {
-			Leer.mostrarEnPantalla("El vagon esta lleno");
+	public void crearVagones() {
+		for (int i = 0; i < vagones.length; i++) {
+			vagones[i]=new Vagon();
 		}
 	}
+	@Override
+	public int compareTo(Tren arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
 	
 }
