@@ -1,0 +1,3 @@
+Perez;8
+Garcia;6
+Martinez;5

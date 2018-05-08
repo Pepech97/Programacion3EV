@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class ejer7 {
+	public static void main(String[] args) {
+		TreeMap<Integer,String> notasalumno=new TreeMap<Integer,String>();
+		String alumnos;
+		int n;
+		do {
+			alumnos=Leer.pedirCadena("Apellido: ( * para acabar)");
+			if (!alumnos.equals("*")) {
+				n=Leer.pedirEntero("nota:");
+				notasalumno.put(n, alumnos);
+			}
+		} while (!alumnos.equals("*"));
+		for (Integer notas : notasalumno.keySet()) {
+			System.out.println("Alumnos con nota: "+notas);
+			notasalumno.get(notas);
+		}
+	}
+}

@@ -6,5 +6,7 @@
 <fullyQualifiedTypeName name="java.util.TreeSet"/>
 <fullyQualifiedTypeName name="Alumno"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Tren"/>
+<fullyQualifiedTypeName name="Fecha"/>
 <fullyQualifiedTypeName name="Leer"/>
 </qualifiedTypeNameHistroy>

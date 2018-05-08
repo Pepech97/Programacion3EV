@@ -1,0 +1,21 @@
+
+public class Tren {
+	private Fecha fechaSalida;
+	private String salida;
+	private String destino;
+	private Integer idtren=101;
+	
+	public Tren(Fecha fechaSalida, String salida, 
+			String destino) {
+		this.fechaSalida = fechaSalida;
+		this.destino = destino;
+		this.salida = salida;
+		this.idtren = idtren+1;
+	}
+	
+	public Integer generarVagones(){
+		Integer vagones = null;
+		return vagones;
+	}
+	
+}
