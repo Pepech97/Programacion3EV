@@ -1,29 +1,85 @@
+import java.util.Arrays;
 
 public class Tren implements Comparable<Tren>{
 	private Fecha fechaSalida;
 	private String salida;
 	private String destino;
 	private Integer idtren=100;
+	private static Integer siguiente=1;
 	private Vagon vagones[]=new Vagon[2];
-	
+
 	public Tren(Fecha fechaSalida, String salida, 
 			String destino) {
 		this.fechaSalida = fechaSalida;
 		this.destino = destino;
 		this.salida = salida;
-		this.idtren++;
+		this.idtren+=siguiente;
+		this.siguiente++;
+		if (siguiente==4) {
+			siguiente=1;
+		}
+	}
+	public Vagon getVagon(int vagon){
+		return vagones[vagon];
+
+	}
+	public void getVagones() {
+		for (int i = 0; i < vagones.length; i++) {
+			System.out.println(vagones[i].toString());
+		}
+
+	}
+	public void setVagones(Vagon[] vagones) {
+		this.vagones = vagones;
 	}
 	public void crearVagones() {
 		for (int i = 0; i < vagones.length; i++) {
 			vagones[i]=new Vagon();
 		}
 	}
-	@Override
-	public int compareTo(Tren arg0) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int asignarAsiento(){
+		int contador=0;
+		int salir=0;
+		for (int i = 0; i < vagones.length; i++) {
+			for (int j = 0; j < vagones[i].getAsientos().length && salir==0; j++) {
+				if (vagones[i].getAsientos()[j]==0) {
+					vagones[i].getAsientos()[j]=1;
+					salir++;
+				}
+				contador++;
+			}
+		}
+
+		return contador;
 	}
-	
-	
-	
+	public void anularBillete(int asiento){
+		
+	}
+	@Override
+	public int compareTo(Tren tren) {
+		return this.idtren - tren.idtren;
+	}
+	public Fecha getFechaSalida() {
+		return fechaSalida;
+	}
+	public String getSalida() {
+		return salida;
+	}
+
+	public String getDestino() {
+		return destino;
+	}
+
+	public Integer getIdtren() {
+		return idtren;
+	}
+
+	@Override
+	public String toString() {
+		return "ID: " + idtren+" Fecha: "+fechaSalida + "\nSalida: " + salida + "\nDestino: " + destino +"\n\n"+ 
+				Arrays.toString(vagones);
+	}
+
+
+
 }

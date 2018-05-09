@@ -6,7 +6,7 @@
  * @author yo
  *
  */
-public class Fecha {
+public class Fecha implements Comparable<Fecha>{
 	private Integer dia;
 	private Integer mes;
 	private Integer anio;
@@ -196,7 +196,7 @@ public class Fecha {
 	 */
 	@Override
 	public String toString() {
-		return "Fecha [dia=" + dia + ", mes=" + mes + ", anio=" + anio + "]";
+		return "" + dia + "/" + mes + "/" + anio;
 	}
 	/**
 	 * @return String fecha en formato texto
@@ -212,6 +212,12 @@ public class Fecha {
 	public String mesTexto() {
 		String [] meses={"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
 		return meses[mes-1];
+	}
+
+	@Override
+	public int compareTo(Fecha dia) {
+		// TODO Auto-generated method stub
+		return this.dia - dia.dia;
 	}
 
 }

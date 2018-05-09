@@ -1,0 +1,22 @@
+import java.util.Arrays;
+
+public class Vagon {
+	private Integer num;
+	private int[] asientos = new int [10];
+	private static Integer siguiente=1;
+	
+	public Vagon() {
+		this.num = siguiente;
+		for (int i = 0; i < asientos.length; i++) {
+			asientos[i]=i;
+		}
+		siguiente++;
+	}
+
+	@Override
+	public String toString() {
+		return "Vagon [num=" + num + ", asientos=" + Arrays.toString(asientos) + "]";
+	}
+	
+	
+}

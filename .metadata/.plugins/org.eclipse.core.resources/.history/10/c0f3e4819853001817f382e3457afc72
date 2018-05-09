@@ -1,0 +1,44 @@
+import java.util.*;
+public class gestionTrenes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		TreeMap<Fecha, HashSet<Tren>> fechaTrenes= new TreeMap<Fecha,HashSet<Tren>>();
+		TreeMap<Fecha, HashSet<Billete>> fechaBilletes= new TreeMap<Fecha,HashSet<Billete>>();
+		crearMapa(fechaTrenes);
+		System.out.println(fechaTrenes);
+		for (Integer i = 0; i <32 ; i++) {
+			Fecha dia = new Fecha(i, 5, 2018);
+			if (dia.getDia()!=null) {
+				for (Integer j = 0; j < 3; j++) {
+					for (Integer k = 0; k < 10; k++) {
+						
+						
+					}
+				}
+			}
+		}
+	}
+
+	private static void crearMapa(TreeMap<Fecha, HashSet<Tren>> fechaTrenes) {
+		for (int i = 0; i <32 ; i++) {
+			Fecha dia = new Fecha(i, 5, 2018);
+			if (dia.getDia()!=null) {
+				Tren tren1 = new Tren(dia,"Zaragoza", "Madrid");
+				Tren tren2 = new Tren(dia,"Barcelona", "Jerez");
+				Tren tren3 = new Tren(dia,"Sevilla", "Leon");
+				tren1.crearVagones();
+				tren2.crearVagones();
+				tren3.crearVagones();
+				HashSet<Tren> Trenes=new HashSet<Tren>();
+				Trenes.add(tren1);
+				Trenes.add(tren2);
+				Trenes.add(tren3);
+				fechaTrenes.put(dia, Trenes);
+			}
+			
+		}
+	}
+
+}
